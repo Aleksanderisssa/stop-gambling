@@ -1,0 +1,374 @@
+/* ====== Base / Theme ====== */
+:root {
+  --bg: #0a0a0a;
+  --surface: #111311;
+  --text: #e7ece9;
+  --muted: #a3ada7;
+  --stroke: #2a312c;
+  --pill-bg: #0f1512;
+  --pill-hover: #141b17;
+  --pill-active: #1a231e;
+  --brand: #2dd4bf;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===================== NAVBAR (glassy + focus) ===================== */
+.nav {
+  background: #000000;
+  border-bottom: 1px solid var(--stroke);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+}
+.brand {
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+}
+.menu {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+.menu a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.menu a.is-active,
+.menu a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 2px solid var(--stroke);
+}
+
+/* ====== Quiz layout ====== */
+.quiz {
+  max-width: 900px;
+  margin: 32px auto 56px;
+}
+.quiz__title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+.quiz__lead {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 26px;
+  font-size: 0.98rem;
+}
+
+/* Pertanyaan */
+.quiz-q {
+  margin: 0 0 26px;
+}
+.quiz-q__title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.quiz-q__desc {
+  margin: 0 0 12px;
+}
+
+/* Opsi sebagai pill */
+.quiz-q__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.opt {
+  position: relative;
+}
+.opt input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.opt span {
+  display: inline-block;
+  padding: 11px 16px;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: var(--pill-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.12s ease;
+}
+.opt span:hover {
+  background: var(--pill-hover);
+  transform: translateY(-1px);
+}
+.opt input:focus-visible + span {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.opt input:checked + span {
+  background: var(--pill-active);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.28) inset;
+}
+
+/* Submit */
+.quiz__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.btn-primary {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: #a7f3d0;
+  color: #063c24;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.05s ease;
+}
+.btn-primary:hover {
+  filter: saturate(1.05);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid var(--stroke);
+  background: var(--surface-2);
+  color: var(--muted);
+  text-align: center;
+  padding: 16px;
+}
+
+/* Responsif */
+@media (max-width: 640px) {
+  .quiz {
+    padding: 0 8px;
+  }
+  .quiz__title {
+    font-size: 1.45rem;
+  }
+  .opt span {
+    padding: 10px 14px;
+  }
+}
+/* ================== SHARED (berlaku untuk kedua tema) ================== */
+:root {
+  --bg: #0a0a0a;
+  --surface: #111311;
+  --surface-2: #0f1411;
+  --text: #e7ece9;
+  --muted: #a3ada7;
+  --stroke: #263029;
+  --brand: #2dd4bf;
+  --brand-2: #89f0d9;
+  --ok: #a7f3d0;
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header judul + deskripsi */
+.quiz {
+  max-width: 900px;
+  margin: 32px auto 56px;
+}
+.quiz__title {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.quiz__lead {
+  margin: 0 0 26px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Struktur pertanyaan */
+.quiz-q {
+  margin: 0 0 24px;
+}
+.quiz-q__title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.quiz-q__desc {
+  margin: 0 0 12px;
+}
+.quiz-q__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Radio disembunyikan; span jadi “pill” */
+.opt {
+  position: relative;
+}
+.opt input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.opt span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  line-height: 1;
+  border: 1px solid var(--stroke);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.12s ease, box-shadow 0.15s ease;
+}
+/* Emoji dari atribut data-emoji */
+.opt[data-emoji] > span::before {
+  content: attr(data-emoji);
+  font-size: 1.05rem;
+}
+
+/* Tombol submit */
+.quiz__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.btn-primary {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: var(--ok);
+  color: #063c24;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.05s ease;
+}
+.btn-primary:hover {
+  filter: saturate(1.05);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* ================== THEME 1: DARK–ELEGANT ================== */
+/* Tambahkan class `theme-elegant` pada .quiz */
+.theme-elegant .quiz-q {
+  background: linear-gradient(180deg, #141a17, #101612);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+.theme-elegant .opt span {
+  background: rgba(15, 21, 18, 0.92);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+.theme-elegant .opt span:hover {
+  background: #17201b;
+  transform: translateY(-2px);
+}
+.theme-elegant .opt input:checked + span {
+  background: linear-gradient(
+    180deg,
+    rgba(45, 212, 191, 0.08),
+    rgba(45, 212, 191, 0.05)
+  );
+  border-color: var(--brand);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.35) inset,
+    0 6px 18px rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+}
+
+/* hilangkan garis bawaan fieldset */
+.quiz-q {
+  border: none; /* hapus garis luar */
+  margin: 0 0 24px; /* tetap kasih jarak antar pertanyaan */
+  padding: 0; /* optional: reset padding */
+}
+
+/* biar legend tidak pakai border/gaya bawaan */
+.quiz-q__title {
+  font-weight: 800;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+/* bikin isi pertanyaan center */
+.quiz-q {
+  border: none; /* kalau mau tanpa garis */
+  margin: 0 0 60px;
+  padding: 0;
+  text-align: center; /* ini yang bikin semua child ikut center */
+}
+
+/* biar opsi tetap rapi tengah */
+.quiz-q__options {
+  display: inline-flex; /* bukan flex full width */
+  flex-wrap: wrap;
+  gap: 220px;
+  justify-content: center;
+}
+
+.quiz-q__title,
+.quiz-q__desc {
+  text-align: center;
+}
+.quiz-q__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}

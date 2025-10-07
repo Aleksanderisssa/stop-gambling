@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduJudi – Dashboard</title>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.java"></script>
+</head>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="brand">EduJudi</a>
+      <nav class="menu">
+        <a href="#"class="is-active">Beranda</a>
+        <a href="modul.html">Modul</a>
+        <a href="kuis.html">Tes Diri</a>
+      </nav>
+      <img class="avatar" src="img/Timothy Ronald.jpeg" alt="Profil">
+    </div>
+  </header>
+
+  <main id="content" class="main container">
+    <!-- ================ GREETING + STATS ================ -->
+    <section class="greeting" aria-labelledby="greeting-title">
+      <h1 id="greeting-title" class="greeting__title">Selamat Datang, <span class="greeting__name">Aleksander</span></h1>
+
+      <div class="stats" role="list">
+        <article class="stat-card" role="listitem" aria-label="Modul Selesai">
+          <div class="stat-card__label">Modul Selesai</div>
+          <div class="stat-card__value">5/10</div>
+        </article>
+        <article class="stat-card" role="listitem" aria-label="Kuis Dikerjakan">
+          <div class="stat-card__label">Kuis Dikerjakan</div>
+          <div class="stat-card__value">3/5</div>
+        </article>
+        <article class="stat-card" role="listitem" aria-label="Tes Diri">
+          <div class="stat-card__label">Tes Diri</div>
+          <div class="stat-card__value">0</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================ FEATURED / PROMO CARDS ================ -->
+    <section class="featured" aria-label="Sorotan">
+      <ul class="featured__grid">
+        <li class="featured__item">
+          <a class="featured-card" href="#modul-1">
+            <img class="featured-card__img" src="img/img1.jpeg" alt="Ilustrasi laptop dan uang"/>
+          </a>
+        </li>
+        <li class="featured__item">
+          <a class="featured-card" href="#modul-2">
+            <img class="featured-card__img" src="img/img2.png" alt="Ilustrasi otak dan koin"/>
+          </a>
+        </li>
+        <li class="featured__item">
+          <a class="featured-card" href="#modul-3">
+            <img class="featured-card__img" src="img/img3.png" alt="Ilustrasi keluarga dan keuangan"/>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================ PROGRESS ================ -->
+    <section class="progress" aria-labelledby="progress-title">
+      <h2 id="progress-title" class="section-title">Progres Belajar</h2>
+
+      <div class="progress__group">
+        <div class="progress__row">
+          <div class="progress__label">Modul 1: Pengenalan Judi Online</div>
+          <div class="progress__percent" aria-hidden="true">50%</div>
+        </div>
+        <div class="progressbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="progressbar__value" style="width:50%"></div>
+        </div>
+      </div>
+
+      <div class="progress__group">
+        <div class="progress__row">
+          <div class="progress__label">Modul 2: Dampak Negatif Judi Online</div>
+          <div class="progress__percent" aria-hidden="true">20%</div>
+        </div>
+        <div class="progressbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+          <div class="progressbar__value" style="width:20%"></div>
+        </div>
+      </div>
+
+      <div class="progress__group">
+        <div class="progress__row">
+          <div class="progress__label">Modul 3: Cara Mengatasi Kecanduan Judi</div>
+          <div class="progress__percent" aria-hidden="true">0%</div>
+        </div>
+        <div class="progressbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progressbar__value" style="width:0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ NOTIFICATIONS ================ -->
+    <section class="notifications" aria-labelledby="notif-title">
+      <h2 id="notif-title" class="section-title">Notifikasi Terbaru</h2>
+
+      <ul class="notif-list" role="list">
+        <li class="notif-item" role="listitem">
+          <div class="notif-item__icon" aria-hidden="true">🔔</div>
+          <div class="notif-item__body">
+            <div class="notif-item__title">Modul baru telah tersedia: Cara Mengatasi Kecanduan Judi</div>
+            <div class="notif-item__meta">2 hari lalu</div>
+          </div>
+        </li>
+        <li class="notif-item" role="listitem">
+          <div class="notif-item__icon" aria-hidden="true">🔔</div>
+          <div class="notif-item__body">
+            <div class="notif-item__title">Kuis baru telah tersedia: Dampak Negatif Judi Online</div>
+            <div class="notif-item__meta">1 minggu lalu</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 EduJudi. Semua hak dilindungi.</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+  <!-- Optional: kecilkan skrip ini jika ingin auto tahun -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

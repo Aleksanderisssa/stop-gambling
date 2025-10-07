@@ -1,0 +1,439 @@
+/* ===================== THEME ===================== */
+:root {
+  --bg: #000000;
+  --surface: #111712; /* kartu/stat */
+  --surface-2: rgba(17, 23, 18, 0.86); /* navbar glass */
+  --text: #e7ece9;
+  --muted: #a3b2a8;
+  --brand: #2dd4bf;
+  --brand-2: #89f0d9;
+  --stroke: #223028;
+  --radius: 16px;
+  --radius-lg: 18px;
+  --shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+}
+
+/* ===================== RESET ===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font: 400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif;
+  color: var(--text);
+  /* layered background for subtle depth */
+  background: radial-gradient(
+      1200px 600px at 20% -10%,
+      rgba(45, 212, 191, 0.06),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 90% 10%,
+      rgba(137, 240, 217, 0.05),
+      transparent 60%
+    ),
+    var(--bg);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section-title {
+  font-size: 1.15rem;
+  margin: 30px 0 14px;
+}
+
+/* ===================== NAVBAR (glassy + focus) ===================== */
+.nav {
+  background: #000000;
+  border-bottom: 1px solid var(--stroke);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+}
+.brand {
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+}
+.menu {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+.menu a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.menu a.is-active,
+.menu a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 2px solid var(--stroke);
+}
+
+/* ===================== LAYOUT ===================== */
+.main {
+  padding: 36px 0 52px;
+}
+.greeting__title {
+  font-size: 1.8rem;
+  margin: 8px 0 20px;
+}
+.greeting__name {
+  font-weight: 900;
+}
+
+/* ===================== STATS (floating cards + micro-interaction) ===================== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.stat-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: 18px 18px 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(45, 212, 191, 0.35);
+}
+.stat-card__label {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.stat-card__value {
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-top: 8px;
+}
+/* chip ikon opsional di pojok kiri bawah */
+.stat-card::before {
+  content: "📘";
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #0f1512;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.stat-card::before {
+  content: none !important;
+}
+
+/* ===================== FEATURED (overlay CTA) ===================== */
+.featured {
+  margin-top: 26px;
+}
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.featured-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--stroke);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.featured-card__img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.02);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.featured-card:hover .featured-card__img {
+  transform: scale(1.03);
+  filter: brightness(0.92);
+}
+.featured-card::after {
+  content: "Lihat detail";
+  position: absolute;
+  inset: auto 12px 12px 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e7ece9;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.25s ease;
+}
+.featured-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== PROGRESS (lebih tebal + anim halus) ===================== */
+.progress {
+  margin-top: 26px;
+}
+.progress__group {
+  margin-bottom: 18px;
+}
+.progress__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.progress__label {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.progress__percent {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.progressbar {
+  height: 12px;
+  background: #0c1210;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.progressbar__value {
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand-2), var(--brand));
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.25);
+  width: 0%; /* isi akan bergerak jika diubah inline */
+  transition: width 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ===================== NOTIFICATIONS ===================== */
+.notifications {
+  margin-top: 10px;
+}
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.notif-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  padding: 12px 14px;
+  transition: background 0.15s ease, transform 0.12s ease,
+    border-color 0.15s ease;
+}
+.notif-item:hover {
+  background: #151d18;
+  transform: translateY(-2px);
+  border-color: rgba(45, 212, 191, 0.28);
+}
+.notif-item__icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #0f1512;
+  border: 1px solid var(--stroke);
+}
+.notif-item__title {
+  font-weight: 700;
+}
+.notif-item__meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+/* ===================== ACCESSIBILITY & REDUCED MOTION ===================== */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  :before,
+  :after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 960px) {
+  .stats,
+  .featured__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .nav__list {
+    gap: 8px;
+  }
+  .stats,
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+  .greeting__title {
+    font-size: 1.45rem;
+  }
+}
+
+.quiz {
+  max-width: 900px;
+  margin: 32px auto 56px;
+}
+.quiz__title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+.quiz__lead {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 26px;
+  font-size: 0.98rem;
+}
+
+/* Pertanyaan */
+.quiz-q {
+  margin: 0 0 26px;
+}
+.quiz-q__title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.quiz-q__desc {
+  margin: 0 0 12px;
+}
+
+/* Opsi sebagai pill */
+.quiz-q__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.opt {
+  position: relative;
+}
+.opt input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.opt span {
+  display: inline-block;
+  padding: 11px 16px;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: var(--pill-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.12s ease;
+}
+.opt span:hover {
+  background: var(--pill-hover);
+  transform: translateY(-1px);
+}
+.opt input:focus-visible + span {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.opt input:checked + span {
+  background: var(--pill-active);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.28) inset;
+}
+
+/* Submit */
+.quiz__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.btn-primary {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: #a7f3d0;
+  color: #063c24;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.05s ease;
+}
+.btn-primary:hover {
+  filter: saturate(1.05);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+fieldset {
+  all: unset;
+  display: block; /* pastiin tetep block */
+}
+
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid var(--stroke);
+  background: var(--surface-2);
+  color: var(--muted);
+  text-align: center;
+  padding: 16px;
+}

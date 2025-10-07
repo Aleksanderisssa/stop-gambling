@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduJudi – Modul</title>
+  <link rel="stylesheet" href="modul.css">
+  <script src="modul.js"></script>
+
+</head>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="brand">EduJudi</a>
+      <nav class="menu">
+        <a href="home.html">Beranda</a>
+        <a href="#"class="is-active">Modul</a>
+        <a href="kuis.html">Tes Diri</a>
+      </nav>
+      <img class="avatar" src="img/Timothy Ronald.jpeg" alt="Profil">
+    </div>
+  </header>
+
+  <main class="main container">
+    <h1 class="page-title">Daftar Modul</h1>
+    <section class="modules">
+      <article class="module-card">
+        <img class="module-thumb" src="img/img4.png" alt="Modul 1"/>
+        <div class="module-body">
+          <h2 class="module-title">Modul 1: Pengenalan Judi Online</h2>
+          <p class="module-desc">Memahami apa itu judi online, bagaimana cara kerjanya, dan risiko awal yang perlu diketahui.</p>
+          <div class="module-progress"><div class="module-progress__value" style="width:50%"></div></div>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <img class="module-thumb" src="img/img5.png" alt="Modul 2"/>
+        <div class="module-body">
+          <h2 class="module-title">Modul 2: Dampak Negatif Judi Online</h2>
+          <p class="module-desc">Menjelaskan dampak psikologis, sosial, dan finansial yang ditimbulkan dari kecanduan judi online.</p>
+          <div class="module-progress"><div class="module-progress__value" style="width:20%"></div></div>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <img class="module-thumb" src="img/img6.png" alt="Modul 3"/>
+        <div class="module-body">
+          <h2 class="module-title">Modul 3: Cara Mengatasi Kecanduan Judi</h2>
+          <p class="module-desc">Strategi dan langkah nyata untuk membantu seseorang keluar dari lingkaran kecanduan judi.</p>
+          <div class="module-progress"><div class="module-progress__value" style="width:0%"></div></div>
+        </div>
+      </article>
+    </section>
+
+<!-- ===================== QUIZ (MULTI QUESTION) ===================== -->
+<section class="quiz-block" id="kuis-modul-1" aria-labelledby="quiz-title">
+  <div class="quiz-wrap container">
+    <h2 id="quiz-title" class="quiz-head">Kuis Modul 1: Bahaya Judi Online</h2>
+
+    <div class="quiz-progress">
+      <div class="quiz-progress__track">
+        <div class="quiz-progress__bar" id="quizBar"></div>
+      </div>
+      <div class="quiz-progress__meta">
+        <span id="quizStep">1</span>/<span id="quizTotal">4</span>
+      </div>
+    </div>
+
+    <form class="quiz-form" id="quizForm" action="#" method="post" novalidate>
+      <!-- Q1 -->
+      <fieldset class="qset" data-index="1">
+        <legend class="qset__question">Apa dampak negatif utama dari judi online?</legend>
+        <label class="qopt"><input type="radio" name="q1" value="D" required><span class="qopt__card"><span class="qopt__dot"></span>Semua jawaban benar</span></label>
+        <label class="qopt"><input type="radio" name="q1" value="A"><span class="qopt__card"><span class="qopt__dot"></span>Kehilangan uang</span></label>
+        <label class="qopt"><input type="radio" name="q1" value="B"><span class="qopt__card"><span class="qopt__dot"></span>Kecanduan</span></label>
+        <label class="qopt"><input type="radio" name="q1" value="C"><span class="qopt__card"><span class="qopt__dot"></span>Masalah keuangan dan sosial</span></label>
+      </fieldset>
+
+      <!-- Q2 -->
+      <fieldset class="qset is-hidden" data-index="2">
+        <legend class="qset__question">Manakah yang termasuk tanda kecanduan judi?</legend>
+        <label class="qopt"><input type="radio" name="q2" value="D" required><span class="qopt__card"><span class="qopt__dot"></span>Semua benar</span></label>
+        <label class="qopt"><input type="radio" name="q2" value="A"><span class="qopt__card"><span class="qopt__dot"></span>Sulit berhenti meski merugikan</span></label>
+        <label class="qopt"><input type="radio" name="q2" value="B"><span class="qopt__card"><span class="qopt__dot"></span>Berbohong soal waktu/uang</span></label>
+        <label class="qopt"><input type="radio" name="q2" value="C"><span class="qopt__card"><span class="qopt__dot"></span>Gelisa saat tidak berjudi</span></label>
+      </fieldset>
+
+      <!-- Q3 -->
+      <fieldset class="qset is-hidden" data-index="3">
+        <legend class="qset__question">Langkah paling tepat untuk mulai mengatasi kecanduan?</legend>
+        <label class="qopt"><input type="radio" name="q3" value="A" required><span class="qopt__card"><span class="qopt__dot"></span>Mencari dukungan profesional/keluarga</span></label>
+        <label class="qopt"><input type="radio" name="q3" value="B"><span class="qopt__card"><span class="qopt__dot"></span>Menambah jumlah taruhan</span></label>
+        <label class="qopt"><input type="radio" name="q3" value="C"><span class="qopt__card"><span class="qopt__dot"></span>Menyimpan masalah sendiri</span></label>
+        <label class="qopt"><input type="radio" name="q3" value="D"><span class="qopt__card"><span class="qopt__dot"></span>Meminjam uang untuk menutup kerugian</span></label>
+      </fieldset>
+
+      <!-- Q4 -->
+      <fieldset class="qset is-hidden" data-index="4">
+        <legend class="qset__question">Pernyataan paling aman terkait keuangan saat berhenti berjudi:</legend>
+        <label class="qopt"><input type="radio" name="q4" value="C" required><span class="qopt__card"><span class="qopt__dot"></span>Batasi akses ke dana & gunakan anggaran</span></label>
+        <label class="qopt"><input type="radio" name="q4" value="A"><span class="qopt__card"><span class="qopt__dot"></span>Kejar balik kerugian dengan bertaruh kecil</span></label>
+        <label class="qopt"><input type="radio" name="q4" value="B"><span class="qopt__card"><span class="qopt__dot"></span>Pinjam dulu agar tenang</span></label>
+        <label class="qopt"><input type="radio" name="q4" value="D"><span class="qopt__card"><span class="qopt__dot"></span>Tidak perlu rencana finansial</span></label>
+      </fieldset>
+
+      <div class="quiz-actions is-hidden" id="quizActions">
+        <button class="btn-primary" type="submit">Kirim Jawaban</button>
+      </div>
+    </form>
+
+    <!-- Tempat hasil -->
+    <section class="quiz__result" id="quizResult"></section>
+  </div>
+</section>
+
+
+  <footer class="footer">© 2025 EduJudi. Semua hak dilindungi.</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
